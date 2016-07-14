@@ -1,0 +1,24 @@
+{
+  "name": "angular-material-skeleton",
+  "version": "0.0.1",
+  "description": "A skeleton application based on Angular Material library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmadhsalim/angular-material-skeleton.git"
+  },
+  "keywords": [
+    "angular",
+    "material",
+    "skeleton"
+  ],
+  "author": "Ahmed Salim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahmadhsalim/angular-material-skeleton/issues"
+  },
+  "homepage": "https://github.com/ahmadhsalim/angular-material-skeleton#readme"
+}
