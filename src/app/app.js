@@ -5,7 +5,7 @@ angular.module('app', [
     'ngMessages',
     'md.data.table'
 ])
-.config(     '$stateProvider', '$urlRouterProvider', '$resourceProvider', '$provide', '$httpProvider',
+.config([    '$stateProvider', '$urlRouterProvider', '$resourceProvider', '$provide', '$httpProvider',
     function ($stateProvider,   $urlRouterProvider,   $resourceProvider,   $provide,   $httpProvider) {
         $stateProvider.state('app', {
             abstract: true,

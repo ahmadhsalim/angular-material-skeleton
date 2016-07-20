@@ -9,7 +9,7 @@ gulp.paths = {
   index: 'src/index.html'
 };
 
-require('require-dir')('public/gulp');
+require('require-dir')('gulp');
 
 gulp.task('default', ['clean'], function () {
     gulp.start('build');
