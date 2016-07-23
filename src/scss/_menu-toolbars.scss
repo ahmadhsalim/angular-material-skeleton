@@ -1,0 +1,42 @@
+.as-toolbar-top{
+	z-index:61;
+}
+
+/* Search box */
+.as-search{
+	border-radius: 2px;
+	padding:5px 0px;
+}
+.as-search md-icon{
+	margin-left: 24px;
+	margin-right: 24px;
+}
+.as-search input{
+	border:none;
+	font-size:16px;
+	background:none;
+	color:white;
+}
+.as-search input::-webkit-input-placeholder{
+	color:white;
+}
+.as-search input:focus{
+	outline:none;
+}
+.as-search input.as-search-focused{
+	color:grey;
+}
+.as-search input.as-search-focused::-webkit-input-placeholder{
+	color:grey;
+}
+
+.as-toolbar-header .md-button{
+	text-transform: none;
+	min-width:0;
+}
+
+/* Menu buttons */
+.as-menu .md-button{
+	font-weight: 400;
+	text-align: left;
+}

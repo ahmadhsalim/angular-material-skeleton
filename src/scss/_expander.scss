@@ -1,0 +1,17 @@
+.as-expander.ng-enter, .as-expander.ng-leave {
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+    overflow: hidden;
+}
+.as-expander.ng-enter, .as-expander.ng-leave.ng-leave-active {
+    max-height: 0;
+    opacity: 0;
+}
+
+.as-expander.ng-leave, .as-expander.ng-enter.ng-enter-active {
+    max-height: 500px;
+    opacity:1;
+}
+
+.as-expandable-list .as-expandable-item {
+    outline:none;
+}

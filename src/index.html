@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-  <title>{{ctrl.appName}}</title>
+  <title page-title></title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+
   <!-- vendor:css -->
   <!-- endinject -->
   
@@ -12,7 +15,11 @@
   <!-- endinject -->
 </head>
 <body ng-controller="ApplicationController as ctrl">
-
+  <div ng-cloak layout="column" md-theme="default" ui-view role="main" class="as-phone relative as-body-content" layout-fill>
+    <div layout layout-align="center center">
+      <md-progress-circular md-mode="indeterminate" md-diameter="60"></md-progress-circular>
+    </div>
+  </div>
 
   <!-- app:js -->
   <!-- endinject -->

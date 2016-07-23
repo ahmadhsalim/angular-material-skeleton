@@ -1,0 +1,45 @@
+/* Sidenav */
+md-sidenav.as-sidenav{
+	width:232px;
+	min-width:232px;
+	max-width:232px;
+}
+md-sidenav.as-sidenav{
+	width:232px;
+	min-width:232px;
+	max-width:232px;
+	background-color: transparent;
+}
+.as-sidenav-header a{
+    text-decoration: none;
+}
+.as-sidenav-header a{
+	text-align: center;
+}
+.as-sidenav-header h1{
+    color: #536E7A;
+    text-align: center;
+    font-weight: 400;
+    font-size: 26px;
+}
+.as-sidenav-header img{
+	height:100px;
+	margin:10px;
+	width:auto;
+	transform-origin:50% 0;
+	transform: scale(1.2);
+}
+
+
+/* Right Sidenav */
+.as-sidenav-wide{
+	max-width: 500px;
+	width: 500px;
+}
+.as-sidenav-wide md-datepicker{
+	padding-right: 0px;
+	margin-right: 0px;
+}
+.as-menu md-icon > svg > path{
+    fill: rgb(96,125,139);
+}

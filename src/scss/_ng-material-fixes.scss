@@ -1,0 +1,59 @@
+// fix date picker issues
+.md-inline-form md-datepicker {
+	margin-top: 15px;
+	margin-right:0px;
+	padding-right:0px;
+}
+.md-hue-3 .md-datepicker-input{
+	background: none !important;
+}
+
+// fix sidenav issues
+.as-fixed-sidenav md-sidenav, .as-fixed-sidenav md-backdrop {
+	position: fixed !important;
+	z-index:65;
+}
+md-menu-item > .md-button > md-checkbox {
+    margin-bottom:0;
+}
+.md-button{
+    font-weight:400;
+}
+
+md-toolbar.md-table-toolbar .md-toolbar-tools md-icon.md-default-theme{
+    color: inherit;
+}
+md-list-item.as-progress-item._md-button-wrap > .md-button:first-child ._md-list-item-inner{
+    width:auto;
+}
+
+md-autocomplete[md-floating-label] md-input-container {
+    padding-bottom: 0px;
+}
+
+md-dialog.as-fullscreen-dialog{
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+.autocomplete-2line li{
+    border-bottom: 1px solid #ccc;
+    height: auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    white-space: normal;
+}
+.autocomplete-2line li:last-child{
+    border-bottom-width:0;
+}
+.autocomplete-2line .item-title,
+.autocomplete-2line .item-metadata{
+    display:block;
+    line-height:2;
+}
+.autocomplete-2line .item-title md-icon{
+    height:18px;
+    width:18px;
+}

@@ -1,0 +1,100 @@
+$max-width: 1096px;
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+[role=button]{
+  cursor:pointer;
+}
+.relative{
+  position:relative;
+}
+.as-square-button {
+  min-width: 28px;
+  min-height: 28px;
+  height: 28px;
+  line-height: 0px;
+}
+.as-square-button > md-icon {
+  width: 15px;
+}
+.as-wordwrap{
+  /* wrap long text and urls */
+  white-space: pre !important; /* CSS 2.0 */
+  white-space: pre-wrap !important; /* CSS 2.1 */
+  white-space: pre-line !important; /* CSS 3.0 */
+  white-space: -pre-wrap !important; /* Opera 4-6 */
+  white-space: -o-pre-wrap !important; /* Opera 7 */
+  white-space: -moz-pre-wrap !important; /* Mozilla */
+  word-wrap: break-word !important; /* IE 5+ */
+}
+/* --- Angular Material --- */
+
+/* input field error message hide workaround */
+/*md-input-container .md-errors-spacer {
+  min-height: 0;
+}*/
+
+/* --- Phoenix components --- */
+
+.as-phone{
+  min-width:320px;
+}
+.as-tablet{
+  min-width:600px;
+}
+.as-contents-fixed{
+  max-width:$max-width;
+}
+
+.as-mt-8{
+  margin-top:8px;
+}
+
+.as-mb-0 {
+  margin-bottom:0px;
+}
+
+.as-mb-16{
+  margin-bottom:16px;
+}
+
+.as-mb-20{
+  margin-bottom:20px !important;
+}
+
+.as-mr-16{
+  margin-right: 16px;
+}
+
+.as-m-8{
+  margin: 8px;
+}
+.as-m-16{
+  margin: 16px;
+}
+.as-m-24{
+  margin: 24px;
+}
+.as-p-8{
+  padding: 8px;
+}
+.as-p-16{
+  padding: 16px;
+}
+.as-p-24{
+  padding: 24px;
+}
+.as-nopadding{
+  padding:0;
+}
+.as-pb-0 {
+  padding-bottom: 0;
+}
+.as-address-map, .as-address-map .angular-google-map-container{
+  width:100%;
+}
+
+.as-address-map .angular-google-map-container {
+  height: 300px;
+}

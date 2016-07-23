@@ -1,0 +1,78 @@
+.as-main-container{
+    position:relative;
+    height:100%;
+}
+.as-body-content{
+    position:relative;
+}
+
+$default-duration: 0.2s;
+$default-enter-start: 0.2s;
+$default-timing: cubic-bezier(0.4, 0, 1, 1);
+$content-to: 80px;
+
+ui-view.as-main-view.ng-leave, ui-view.as-main-view.ng-enter {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+ui-view.as-main-view.ng-leave{
+    transform: translateY(0px);
+    opacity: 1;
+    animation: main-content $default-duration $default-timing;
+}
+ui-view.as-main-view.ng-enter {
+    transform: translateY($content-to);
+    opacity: 0;
+    animation: main-content $default-duration $default-timing $default-enter-start 1 reverse;
+}
+@keyframes main-content {
+    from {
+        transform: translateY(0);
+        opacity:1;
+    }
+    to {
+        transform: translateY($content-to);
+        opacity:0;
+    }
+}
+
+md-toolbar.as-toolbar-top.ng-hide-add, md-toolbar.as-toolbar-top.ng-hide-remove {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+md-toolbar.as-toolbar-top.ng-hide-add {
+    opacity: 1;
+    animation: top-toolbar $default-duration $default-timing;
+}
+md-toolbar.as-toolbar-top.ng-hide-remove {
+    opacity: 0;
+    animation: top-toolbar $default-duration $default-timing 1 reverse;
+}
+md-toolbar.as-toolbar-top.ng-hide-add ~ .as-main-container, md-toolbar.as-toolbar-top.ng-hide-remove ~ .as-main-container {
+    margin-top: 64px !important;
+    margin-bottom: 0px !important;
+    transform: translate3d(0px, 0px, 0px) !important;
+}
+@keyframes top-toolbar {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 959px){
+    ui-view.as-main-view.ng-leave, ui-view.as-main-view.ng-enter {
+        left: 0;
+    }
+    md-toolbar.as-toolbar-top.ng-hide-add ~ .as-main-container, md-toolbar.as-toolbar-top.ng-hide-remove ~ .as-main-container {
+        margin-top: 48px !important;
+        margin-bottom: 0px !important;
+        transform: translate3d(0px, 0px, 0px) !important;
+    }
+}

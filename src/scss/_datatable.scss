@@ -1,0 +1,15 @@
+.as-outset-table{
+	margin:-8px;
+}
+md-table-container tbody md-radio-button{
+    margin-bottom:0px;
+}
+
+md-table-container tbody md-switch{
+    margin:8px 0;
+}
+
+// fix for nested table without md-row-select
+table table.md-table:not(.md-row-select) td.md-cell:first-child, table table.md-table:not(.md-row-select) th.md-column:first-child{
+    width:auto;
+}
