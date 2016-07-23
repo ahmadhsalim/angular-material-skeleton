@@ -44,7 +44,7 @@ gulp.task('vendor', function () {
         .pipe(cssFilter.restore)
         .pipe(svgFilter)
         .pipe(config.production ? $.minifyHtml2({empty: true, spare: true, quotes: true}) : $.util.noop())
-        .pipe($.angularTemplatecache('templateCacheSvg.js', {
+        .pipe($.angularTemplatecache('svgTemplateCache.js', {
             module: 'app'
         }))
         .pipe($.uglify())
@@ -52,13 +52,20 @@ gulp.task('vendor', function () {
         .pipe(svgFilter.restore);
 });
 
+gulp.task('index', [
+        'vendor',
+        'style',
+        'js',
+        'partials'
+    ], function(){
+    return gulp.start('indexFile');
+});
 gulp.task('indexFile', function(){
     return gulp.src(paths.index)
-        .pipe($.minifyHtml2({
-            empty: true,
-            spare: true,
-            quotes: true
-        }))
+        .pipe($.inject(gulp.src([paths.public + '/vendor.js', paths.public + '/vendor.css'], {read:false}), {name:'vendor'}))
+        .pipe($.inject(gulp.src([paths.public + '/app.js'], {read:false}), {name:'app'}))
+        .pipe($.inject(gulp.src([paths.public + '/**/*.js', paths.public + '/**/*.css', '!' + paths.public + '/app.js', '!' + paths.public + '/vendor.js', '!' + paths.public + '/vendor.css'], {read:false})))
+        .pipe(config.production ? $.minifyHtml2({empty: true, spare: true, quotes: true}) : $.util.noop())
         .pipe(gulp.dest(paths.public));
 });
 
@@ -70,7 +77,7 @@ gulp.task('partials', function () {
             spare: true,
             quotes: true
         }))
-        .pipe($.angularTemplatecache('templateCacheHtml.js', {
+        .pipe($.angularTemplatecache('htmlTemplateCache.js', {
             module: 'app',
             // convert template cache IDs to dot notation. eg: Modules/User/List.html = Modules.User.List
             transformUrl: function (url) {
@@ -113,11 +120,7 @@ gulp.task('clean', function (done) {
 
 gulp.task('build',
     [
-        'indexFile',
-        'vendor',
-        'style',
-        'js',
-        'partials'
+        'index'
     ], function () {
     console.log('Compilation Completed');
     gulp.start('watch');
