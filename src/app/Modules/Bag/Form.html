@@ -1,0 +1,26 @@
+<div layout="row" flex layout-wrap>
+    <md-input-container class="md-block" flex="40">
+        <label>Name</label>
+        <input md-maxlength="45" required name="name" ng-model="ctrl.consumable.data.attributes.name">
+        <div ng-messages="consumableForm.name.$error">
+            <div ng-message="required">This is required.</div>
+            <div ng-message="md-maxlength">The name has to be less than 45 characters long.</div>
+        </div>
+    </md-input-container>
+    <md-input-container class="md-block" flex="30">
+        <label>Code</label>
+        <input md-maxlength="45" required name="code" ng-model="ctrl.consumable.data.attributes.code">
+        <div ng-messages="consumableForm.code.$error">
+            <div ng-message="required">This is required.</div>
+            <div ng-message="md-maxlength">The code has to be less than 45 characters long.</div>
+        </div>
+    </md-input-container>
+    <md-input-container class="md-block" flex="30">
+        <label>Size</label>
+        <input md-maxlength="45" required name="size" ng-model="ctrl.consumable.data.attributes.size">
+        <div ng-messages="consumableForm.size.$error">
+            <div ng-message="required">This is required.</div>
+            <div ng-message="md-maxlength">The size has to be less than 45 characters long.</div>
+        </div>
+    </md-input-container>
+</div>

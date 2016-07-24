@@ -12,7 +12,8 @@ angular.module('app', [
 
   'app.directives',
 
-  'app.dashboard'
+  'app.dashboard',
+  'app.bag'
 ])
 .config([  '$stateProvider', '$urlRouterProvider', '$resourceProvider', '$provide', '$httpProvider',
   function ($stateProvider,   $urlRouterProvider,   $resourceProvider,   $provide,   $httpProvider) {

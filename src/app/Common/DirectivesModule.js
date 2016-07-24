@@ -43,6 +43,7 @@ var asFocuser = ['$timeout', '$parse',
         }
     }
 ];
+
 /**
  *
  * Pass all functions into module
