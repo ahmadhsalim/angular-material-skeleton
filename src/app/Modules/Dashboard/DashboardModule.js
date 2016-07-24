@@ -7,7 +7,10 @@ angular.module('app.dashboard', [])
 
       $stateProvider.state('app.dashboard', {
         url: '/dashboard',
-        templateUrl: 'Modules.Dashboard.View'
+        templateUrl: 'Modules.Dashboard.View',
+        data:{
+        	pageTitle: 'Dashboard'
+        }
       });
 
     }

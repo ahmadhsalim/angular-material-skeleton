@@ -7,7 +7,10 @@ angular.module('app', [
   'ngMessages',
   'ui.router',
   'md.data.table',
+  'angular-click-outside',
   'ngUtils',
+
+  'app.directives',
 
   'app.dashboard'
 ])
@@ -29,7 +32,7 @@ angular.module('app', [
 
       },
       data:{
-        class: 'md-wireframe-1dp'
+        class: 'as-contents-fixed md-wireframe-1dp'
       }
     })
     .state('guest', {

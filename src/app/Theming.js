@@ -45,7 +45,7 @@ angular.module('app')
                 'hue-1': '50'
             });
 
-        var defaultColourMap = $mdThemingProvider.extendPalette('blue', {
+        var defaultColourMap = $mdThemingProvider.extendPalette('indigo', {
             '50': 'FFFFFF'
         });
         $mdThemingProvider.definePalette('defaultTheme', defaultColourMap)
@@ -53,7 +53,7 @@ angular.module('app')
             .primaryPalette('defaultTheme', {
                 'hue-3': '50'
             })
-            .accentPalette('orange')
+            .accentPalette('blue-grey')
             .backgroundPalette('grey', {
                 'hue-2': '100',
                 'hue-3': '200'

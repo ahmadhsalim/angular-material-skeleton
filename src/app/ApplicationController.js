@@ -3,11 +3,9 @@
 
 angular.module('app')
 .controller('ApplicationController',
-[          '$mdMedia', '$scope', '$mdSidenav',
-  function ($mdMedia,   $scope,   $mdSidenav) {
+[          '$mdMedia', '$scope', '$mdToast', '$mdSidenav',
+  function ($mdMedia,   $scope,   $mdToast,   $mdSidenav) {
     var ctrl = this;
-
-    ctrl.appName = "Angular Material Skeleton";
 
     ctrl.toggleSidenav = function () {
         if($mdMedia('gt-sm')){
@@ -35,7 +33,7 @@ angular.module('app')
       $mdToast.show(
         // sign out function //
         $mdToast.simple()
-          .parent($element[0].querySelector('.px-main-container'))
+          .parent($element[0].querySelector('.as-main-container'))
           .position('top right')
           .textContent('Signed out.')
           .hideDelay(3000)
@@ -48,7 +46,7 @@ angular.module('app')
               // search request goes here //
               $mdToast.show(
                 $mdToast.simple()
-                  .parent($element[0].querySelector('.px-main-container'))
+                  .parent($element[0].querySelector('.as-main-container'))
                   .position('top right')
                   .textContent('Searching')
                   .hideDelay(3000)
@@ -56,7 +54,7 @@ angular.module('app')
             }else{
               $mdToast.show(
                 $mdToast.simple()
-                  .parent($element[0].querySelector('.px-main-container'))
+                  .parent($element[0].querySelector('.as-main-container'))
                   .position('top right')
                   .textContent('Invalid national ID number!')
                   .hideDelay(3000)

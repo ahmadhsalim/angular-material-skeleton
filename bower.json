@@ -27,6 +27,7 @@
     "angular-resource": "^1.5.7",
     "angular-material-data-table": "^0.10.9",
     "material-design-icons": "^2.2.3",
-    "ngUtils": "*"
+    "ngUtils": "*",
+    "angular-click-outside": "^2.8.3"
   }
 }

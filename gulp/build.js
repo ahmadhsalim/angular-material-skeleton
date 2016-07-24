@@ -118,9 +118,7 @@ gulp.task('style', function () {
 });
 
 gulp.task('clean', function (done) {
-  return $.del(paths.public).then(function (paths) {
-    done();
-  });
+  return $.del(paths.public).then(function (paths) {});
 });
 
 gulp.task('build',

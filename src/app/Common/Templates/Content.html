@@ -1,3 +1,72 @@
-<div>
-	Content
-</div>
+<md-toolbar md-theme="topnav" ng-hide="ctrl.showSearch" class="as-toolbar-top md-whiteframe-4dp">
+    <div class="md-toolbar-tools">
+        <md-button ng-click="ctrl.toggleSidenav()" class="md-icon-button" aria-label="Menu">
+            <md-icon md-svg-icon="ic_menu_24px.svg"></md-icon>
+        </md-button>
+        <div hide-xs class="as-toolbar-header">
+            <h3>{{appName}}</h3>
+        </div>
+        <md-content md-theme="search" class="md-hue-1 as-search" flex flex-offset="5" ng-click="ctrl.toggleSearch()">
+            <md-icon class="as-search-icon" md-svg-src="ic_search_24px.svg"></md-icon>
+            <input flex ng-model="ctrl.searchQuery" placeholder="Search">
+        </md-content>
+        <md-button aria-label="Notifications" class="md-icon-button">
+            <md-icon md-menu-origin md-svg-src="ic_notifications_none_24px.svg"></md-icon>
+        </md-button>
+        <md-menu md-theme="default">
+            <md-button aria-label="Open profile menu" class="md-icon-button" ng-click="ctrl.openProfileMenu($mdOpenMenu, $event)">
+                <md-icon md-menu-origin md-svg-src="ic_account_circle_24px.svg"></md-icon>
+            </md-button>
+            <md-menu-content width="4">
+                <md-menu-item>
+                    <md-button>
+                        <md-icon md-svg-src="ic_person_24px.svg"></md-icon>
+                        Hussain Ismail<!-- {{Identity.getName()}} -->
+                    </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item>
+                    <md-button ng-click="ctrl.signOut()">
+                        <md-icon md-svg-src="ic_power_settings_new_24px.svg"></md-icon>
+                        Sign Out
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
+</md-toolbar>
+<md-toolbar md-theme="topnav" ng-show="ctrl.showSearch" class="as-toolbar-top md-hue-1 md-whiteframe-4dp" id="main-menu" click-outside="ctrl.toggleSearch()">
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" ng-click="ctrl.toggleSearch()" aria-label="Back">
+            <md-icon md-svg-src="ic_arrow_back_24px.svg"></md-icon>
+        </md-button>
+        <div class="as-toolbar-header" layout="row">
+            <h3>{{appName}}</h3>
+        </div>
+        <md-content md-theme="default" class="as-search" flex flex-offset="5">
+            <form layout name="searchForm">
+                <md-icon class="as-search-icon" md-svg-src="ic_search_24px.svg"></md-icon>
+                <input flex name="search" ng-keypress="ctrl.search($event, searchForm, ctrl.searchQuery)" as-focuser="ctrl.showSearch" flex class="as-search-focused" ng-model="ctrl.searchQuery" placeholder="Search">
+            </form>
+        </md-content>
+        <div>
+            <md-button ng-disabled="!ctrl.searchQuery" class="md-icon-button" aria-label="Cancel" ng-click="ctrl.searchQuery = ''">
+                <md-icon md-svg-src="ic_close_24px.svg"></md-icon>
+            </md-button>
+        </div>
+    </div>
+</md-toolbar>
+
+<md-content md-theme="default" layout="row" class="md-hue-3 as-main-container" id="toast-container">
+    <md-sidenav md-theme="menu" class="md-sidenav-left as-sidenav"
+        ng-class="{'md-whiteframe-2dp': $mdMedia('sm')}"
+        ng-include="'Common.Templates.Sidenav'"
+        md-component-id="left"
+        md-is-open="false"
+        md-is-locked-open="ctrl.isSidenavLocked && $mdMedia('gt-sm')"
+        layout="column">
+    </md-sidenav>
+    <md-content md-theme="default" class="md-hue-3 relative" as-container flex>
+        <ui-view flex class="as-main-view"></ui-view>
+    </md-content>
+</md-content>
