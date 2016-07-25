@@ -4,8 +4,6 @@ angular.module('app.bag')
     [
         function () {
             var ctrl = this;
-            
-            ctrl.bag = bag;
         }
     ]);
 })();

@@ -36,13 +36,6 @@ angular.module('app.bag', [])
                         controller: 'BagViewController as ctrl',
                     }
                 },
-                resolve: {
-                    bag: ['BagRepository', '$stateParams',
-                        function (BagRepository,   $stateParams) {
-                            return BagRepository.get($stateParams.bagId);
-                        }
-                    ]
-                },
                 data:{
                     pageTitle: 'View Bag'
                 }
