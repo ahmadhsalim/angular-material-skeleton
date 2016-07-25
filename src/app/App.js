@@ -13,6 +13,9 @@ angular.module('app', [
   'app.directives',
 
   'app.dashboard',
+  'app.user',
+  'app.address',
+  'app.mail',
   'app.bag'
 ])
 .config([  '$stateProvider', '$urlRouterProvider', '$resourceProvider', '$provide', '$httpProvider',

@@ -1,0 +1,29 @@
+<div layout="row" flex layout-wrap>
+    <md-input-container class="md-block" flex="20">
+        <label>Name</label>
+        <input md-maxlength="10" required name="name" ng-model="ctrl.user.data.attributes.name">
+        <div ng-messages="userForm.name.$error">
+            <div ng-message="required">This is required.</div>
+            <div ng-message="md-maxlength">The name has to be less than 10 characters long.</div>
+        </div>
+    </md-input-container>
+    <md-input-container class="md-block" flex="20">
+        <label>Username</label>
+        <input md-maxlength="2" required name="code" ng-model="ctrl.user.data.attributes.username">
+        <div ng-messages="userForm.username.$error">
+            <div ng-message="required">This is required.</div>
+            <div ng-message="md-maxlength">The username has to be less than 2 characters long.</div>
+        </div>
+    </md-input-container>
+
+    <md-datepicker ng-model="ctrl.user.data.attributes.date_of_birth" md-placeholder="Date of Birth"></md-datepicker>
+
+    <md-input-container class="md-block" flex="20">
+        <label>Email</label>
+        <input ng-pattern="/^.+@.+\..+$/" type="email" required name="code" ng-model="ctrl.user.data.attributes.email">
+        <div ng-messages="userForm.email.$error">
+            <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">Email must be between 10 and 100 characters long and look like an e-mail address.</div>
+        </div>
+    </md-input-container>
+    
+</div>

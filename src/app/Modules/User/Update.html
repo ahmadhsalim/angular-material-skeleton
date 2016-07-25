@@ -1,0 +1,22 @@
+<as-content-body class="md-inline-form">
+    <md-content class="md-whiteframe-1dp">
+        <form name="userForm">
+            <md-toolbar layout="row">
+                <div class="md-toolbar-tools" flex>
+                    <h2><span>Update User</span></h2>
+                    <span flex></span>
+                    <md-button ui-sref="^" class="md-icon-button" aria-label="Cancel">
+                        <md-icon md-svg-src="ic_close_24px.svg"></md-icon>
+                    </md-button>
+                    <md-button ui-sref="^" class="md-icon-button" aria-label="Update">
+                        <md-icon md-svg-src="ic_done_24px.svg"></md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+            <div layout-padding>
+                <div ng-include="'Modules.User.Form'"></div>
+            </div>
+        </form>
+    </md-content>
+    </md-content>
+</as-content-body>
