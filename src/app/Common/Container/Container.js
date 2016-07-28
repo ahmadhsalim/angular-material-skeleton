@@ -1,11 +1,13 @@
 (function() {
+"use strict"
+
 angular.module('app.directives')
-.directive('asContentBody', [
+.directive('asContainer', [
     function () {
         return {
             restrict: 'E',
             transclude: true,
-            templateUrl: 'Common.ContentBody.Template'
+            templateUrl: 'Common.Container.Template'
         }
     }
 ]);

@@ -1,0 +1,25 @@
+<as-container>
+    <md-content class="md-whiteframe-1dp">
+        <md-toolbar layout="row">
+            <div class="md-toolbar-tools" flex>
+                <md-button ui-sref="^" class="md-icon-button" aria-label="Back">
+                    <md-icon md-svg-src="ic_arrow_back_24px.svg"></md-icon>
+                </md-button>
+                <h2><span>Role</span></h2>
+                <span flex></span>
+                <md-button ui-sref=".update" class="md-icon-button" aria-label="Update">
+                    <md-icon md-svg-src="ic_edit_24px.svg"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-list layout layout-xs="column" flex layout-wrap>
+            <md-list-item flex-gt-xs="50" class="md-2-line">
+                <md-icon md-svg-src="ic_person_24px.svg"></md-icon>
+                <div class="md-list-item-text">
+                    <h3>Admin</h3>
+                    <p>Name</p>
+                </div>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</as-container>

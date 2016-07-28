@@ -1,5 +1,7 @@
 (function() {
-angular.module('app.user')
+"use strict"
+
+angular.module('app.users')
 .controller('UserListController',
 [			 '$state',
     function ($state) {

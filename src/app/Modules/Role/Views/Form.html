@@ -1,0 +1,36 @@
+<as-container class="md-inline-form">
+    <md-content class="md-whiteframe-1dp">
+        <form name="roleForm" ng-submit="roleForm.$valid && ctrl.save($event)" novalidate>
+            <md-toolbar layout="row">
+                <div class="md-toolbar-tools" flex>
+                    <md-button ui-sref="^" class="md-icon-button" aria-label="Back">
+                        <md-icon md-svg-src="ic_arrow_back_24px.svg"></md-icon>
+                    </md-button>
+                    <h2><span ng-if="!ctrl.editMode">Create</span>
+                        <span ng-if="ctrl.editMode">Update</span>
+                        Role
+                     </h2>
+                    <span flex></span>
+                    <md-button ui-sref="^" class="md-icon-button" aria-label="Cancel">
+                        <md-icon md-svg-src="ic_close_24px.svg"></md-icon>
+                    </md-button>
+                    <md-button type="submit" class="md-icon-button" aria-label="Save">
+                        <md-icon md-svg-src="ic_done_24px.svg"></md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+            <div layout-padding>
+                <div layout layout-xs="column" flex layout-wrap>
+                    <md-input-container class="md-block" flex="33">
+                        <label>Name</label>
+                        <md-icon md-svg-src="ic_person_24px.svg"></md-icon>
+                        <input md-maxlength="30" required type="text" name="name" ng-model="ctrl.role.data.attributes.name">
+                        <div ng-messages="roleForm.name.$error" ng-if="roleForm.name.$touched">
+                            <div ng-messages-include="Common.Templates.Messages"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+        </form>
+    </md-content>
+</as-container>

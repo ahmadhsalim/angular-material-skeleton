@@ -1,12 +1,14 @@
 (function() {
-angular.module('app.user', [])
+"use strict"
+
+angular.module('app.users', [])
     .config([   '$stateProvider',
         function($stateProvider) {
             $stateProvider.state('app.users', {
                 url: '/users',
                 views:{
                     '@app': {
-                        templateUrl: 'Modules.User.List',
+                        templateUrl: 'Modules.User.Views.List',
                         controller: 'UserListController as ctrl',
                     }
                 },
@@ -18,7 +20,7 @@ angular.module('app.user', [])
                 url: '/create',
                 views: {
                     '@app': {
-                        templateUrl: 'Modules.User.Create',
+                        templateUrl: 'Modules.User.Views.Form',
                         controller: 'UserCreateController as ctrl',
                     }
                 },
@@ -32,7 +34,7 @@ angular.module('app.user', [])
                 url: '/:userId',
                 views: {
                     '@app': {
-                        templateUrl: 'Modules.User.View',
+                        templateUrl: 'Modules.User.Views.View',
                         controller: 'UserViewController as ctrl',
                     }
                 },
@@ -44,7 +46,7 @@ angular.module('app.user', [])
                 url: '/update',
                 views: {
                     '@app': {
-                        templateUrl: 'Modules.User.Update',
+                        templateUrl: 'Modules.User.Views.Form',
                         controller: 'UserUpdateController as ctrl',
                     }
                 },

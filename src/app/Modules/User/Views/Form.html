@@ -1,0 +1,73 @@
+<as-container class="md-inline-form">
+    <md-content class="md-whiteframe-1dp">
+        <form name="userForm" ng-submit="userForm.$valid && ctrl.save($event)" novalidate>
+            <md-toolbar layout="row">
+                <div class="md-toolbar-tools" flex>
+                    <md-button ui-sref="^" class="md-icon-button" aria-label="Back">
+                        <md-icon md-svg-src="ic_arrow_back_24px.svg"></md-icon>
+                    </md-button>
+                    <h2><span ng-if="!ctrl.editMode">Create</span>
+                        <span ng-if="ctrl.editMode">Update</span>
+                        User
+                     </h2>
+                    <span flex></span>
+                    <md-button ui-sref="^" class="md-icon-button" aria-label="Cancel">
+                        <md-icon md-svg-src="ic_close_24px.svg"></md-icon>
+                    </md-button>
+                    <md-button type="submit" class="md-icon-button" aria-label="Save">
+                        <md-icon md-svg-src="ic_done_24px.svg"></md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+            <div layout-padding>
+                <div layout layout-xs="column" flex layout-wrap>
+                    <md-input-container class="md-block" flex="33">
+                        <label>Name</label>
+                        <md-icon md-svg-src="ic_person_24px.svg"></md-icon>
+                        <input md-maxlength="30" required type="text" name="name" ng-model="ctrl.user.data.attributes.name">
+                        <div ng-messages="userForm.name.$error" ng-if="userForm.name.$touched">
+                            <div ng-messages-include="Common.Templates.Messages"></div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex="40">
+                        <label>Email</label>
+                        <md-icon md-svg-src="ic_mail_24px.svg"></md-icon>
+                        <input ng-pattern="/^.+@.+\..+$/" required type="email" name="email" ng-model="ctrl.user.data.attributes.email">
+                        <div ng-messages="userForm.email.$error" ng-if="userForm.email.$touched">
+                            <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">Invalid e-mail address.</div>
+                            <div ng-messages-include="Common.Templates.Messages"></div>
+                        </div>
+                    </md-input-container>
+
+                    <md-datepicker flex ng-model="ctrl.user.data.attributes.date_of_birth" md-placeholder="Date of Birth"></md-datepicker>
+                    
+                    <md-input-container class="md-block" flex="33">
+                        <label>Username</label>
+                        <md-icon md-svg-src="ic_account_circle_24px.svg"></md-icon>
+                        <input md-maxlength="20" md-minlength="4" required type="text" name="username" ng-model="ctrl.user.data.attributes.username">
+                        <div ng-messages="userForm.username.$error" ng-if="userForm.username.$touched">
+                            <div ng-messages-include="Common.Templates.Messages"></div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex="33">
+                        <label>Password</label>
+                        <md-icon md-svg-src="ic_lock_24px.svg"></md-icon>
+                        <input md-maxlength="20" md-minlength="5" required type="password" name="password" ng-model="ctrl.user.data.attributes.password">
+                        <div ng-messages="userForm.password.$error" ng-if="userForm.password.$touched">
+                            <div ng-messages-include="Common.Templates.Messages"></div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex="33">
+                        <label>Confirm Password</label>
+                        <md-icon md-svg-src="ic_lock_24px.svg"></md-icon>
+                        <input as-equalto="ctrl.user.data.attributes.password" md-maxlength="20" md-minlength="5" required type="password" name="confirmPassword" ng-model="ctrl.user.data.attributes.confirm_password">
+                        <div ng-messages="userForm.confirmPassword.$error" ng-if="userForm.confirmPassword.$touched">
+                            <div ng-messages-include="Common.Templates.Messages"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+        </form>
+    </md-content>
+</as-container>

@@ -1,17 +1,17 @@
 (function() {
 "use strict"
 
-angular.module('app.users')
-.controller('UserCreateController',
+angular.module('app.roles')
+.controller('RoleCreateController',
 [            '$mdToast', 'asElements',
     function ($mdToast,   asElements) {
         var ctrl = this;
 
         ctrl.save = function ($event) {
-        	console.log('User created!', ctrl.user);
+        	console.log('Role created!', ctrl.role);
 
             $mdToast.show($mdToast.simple()
-                .textContent('User created successfully!')
+                .textContent('Role created successfully!')
                 .position('top right')
                 .hideDelay(3000)
                 .action('OK')

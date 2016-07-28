@@ -11,12 +11,11 @@ angular.module('app', [
   'ngUtils',
 
   'app.directives',
+  'app.services',
 
   'app.dashboard',
-  'app.user',
-  'app.address',
-  'app.mail',
-  'app.bag'
+  'app.users',
+  'app.roles'
 ])
 .config([  '$stateProvider', '$urlRouterProvider', '$resourceProvider', '$provide', '$httpProvider',
   function ($stateProvider,   $urlRouterProvider,   $resourceProvider,   $provide,   $httpProvider) {
