@@ -15,6 +15,11 @@ var config = {
   production: !!$.util.env.production,
 };
 
+var injectTransformer = function (filepath, file, i, length) {
+  // default transformation withou change //
+  return $.inject.transform.apply($.inject.transform, arguments);
+}
+
 gulp.task('vendor', function () {
   var jsFilter = $.filter('**/*.js', {restore: true});
   var cssFilter = $.filter('**/*.css', {restore: true});
@@ -61,16 +66,27 @@ gulp.task('all', [
   return gulp.start('inject');
 });
 gulp.task('indexFile', function(){
-  return gulp.src(paths.index)
-    .pipe(gulp.dest(paths.public));
+  return gulp.src(paths.indexSrc + '/' + paths.indexName)
+    .pipe(gulp.dest(paths.indexDest));
 });
 gulp.task('inject', ['indexFile'], function(){
-  return gulp.src(paths.public + '/index.html')
-    .pipe($.inject(gulp.src([paths.public + '/vendor.js', paths.public + '/vendor.css'], {read:false}), {name:'vendor', relative: true}))
-    .pipe($.inject(gulp.src([paths.public + '/app.js'], {read:false}), {name:'app', relative: true}))
-    .pipe($.inject(gulp.src([paths.public + '/**/*.js', paths.public + '/**/*.css', '!' + paths.public + '/app.js', '!' + paths.public + '/vendor.js', '!' + paths.public + '/vendor.css'], {read:false}), {relative:true}))
+  return gulp.src(paths.indexDest + '/' + paths.indexName)
+    .pipe($.inject(gulp.src([paths.public + '/vendor.js', paths.public + '/vendor.css'], {read:false}), {
+      name:'vendor',
+      relative: true,
+      transform: paths.transformIndex || injectTransformer
+    }))
+    .pipe($.inject(gulp.src([paths.public + '/app.js'], {read:false}), {
+      name:'app',
+      relative: true,
+      transform: paths.transformIndex || injectTransformer
+    }))
+    .pipe($.inject(gulp.src([paths.public + '/**/*.js', paths.public + '/**/*.css', '!' + paths.public + '/app.js', '!' + paths.public + '/vendor.js', '!' + paths.public + '/vendor.css'], {read:false}), {
+      relative: true,
+      transform: paths.transformIndex || injectTransformer
+    }))
     .pipe(config.production ? $.minifyHtml2({empty: true, spare: true, quotes: true}) : $.util.noop())
-    .pipe(gulp.dest(paths.public));
+    .pipe(gulp.dest(paths.indexDest));
 });
 
 
@@ -118,7 +134,7 @@ gulp.task('style', function () {
 });
 
 gulp.task('clean', function (done) {
-  return $.del(paths.public).then(function (paths) {});
+  return $.del([paths.public, paths.indexDest + '/' + paths.indexName]).then(function (paths) {});
 });
 
 gulp.task('build',

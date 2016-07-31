@@ -45,15 +45,14 @@ angular.module('app')
             if(searchForm.$valid){
 
               // search request goes here //
-              // $mdToast.show(
-              //   $mdToast.simple()
-              //     .parent($element[0].querySelector('.as-main-container'))
-              //     .position('top right')
-              //     .textContent('Searching')
-              //     .hideDelay(3000)
-              // );
+              $mdToast.show(
+                $mdToast.simple()
+                  .parent($element[0].querySelector('.as-main-container'))
+                  .position('top right')
+                  .textContent('Searching')
+                  .hideDelay(3000)
+              );
 
-              $state.go('app.parcels.view', {parcelId: 2});
             }else{
               $mdToast.show(
                 $mdToast.simple()

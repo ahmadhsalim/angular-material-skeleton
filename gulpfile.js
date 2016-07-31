@@ -6,7 +6,9 @@ gulp.paths = {
   app: 'src/app',
   style: 'src/scss',
   public: 'public',
-  index: 'src/index.html'
+  indexSrc: 'src',
+  indexDest: 'public',
+  indexName: 'index.html'
 };
 
 require('require-dir')('gulp');
